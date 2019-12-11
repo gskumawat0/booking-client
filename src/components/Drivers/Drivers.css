@@ -1,0 +1,14 @@
+.main {
+	min-height: calc(100vh - 7rem);
+}
+
+.legend {
+	background: #b2b2b2;
+	color: #fff;
+	border-radius: 7px;
+	/* border: `none` */
+}
+
+.driver-card {
+	background: #e9ecef;
+}

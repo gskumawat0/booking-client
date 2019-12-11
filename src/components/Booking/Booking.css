@@ -1,0 +1,7 @@
+.booking-card {
+	background: #e9ecef;
+}
+
+.main {
+	min-height: calc(100vh - 7rem);
+}

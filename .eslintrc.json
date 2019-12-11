@@ -1,0 +1,51 @@
+{
+	"env": {
+		"browser": true,
+		"es6": true
+	},
+	"extends": ["plugin:react/recommended", "airbnb", "prettier"],
+	"globals": {
+		"Atomics": "readonly",
+		"SharedArrayBuffer": "readonly"
+	},
+	"parserOptions": {
+		"ecmaFeatures": {
+			"jsx": true
+		},
+		"ecmaVersion": 2018,
+		"sourceType": "module"
+	},
+	"plugins": ["react", "prettier"],
+	"rules": {
+		"prettier/prettier": "warn",
+		"no-unused-vars": "error",
+		"no-console": "warn",
+		"func-names": "off",
+		"no-process-exit": "off",
+		"object-shorthand": "off",
+		"class-methods-use-this": "off",
+		"prefer-const": "off",
+		"react/jsx-indent": "off",
+		"react/jsx-filename-extension": "off",
+		"react/jsx-indent-props": "off",
+		"no-plusplus": "off",
+		"react/prop-types": "error",
+		"react/jsx-one-expression-per-line": "off",
+		"react/jsx-closing-bracket-location": "off",
+		"no-shadow": "off",
+		"no-underscore-dangle": "off",
+		"consistent-return": "warn",
+		"import/no-unresolved": "error",
+		"react/jsx-wrap-multilines": "off",
+		"react/jsx-props-no-spreading": "off",
+		"import/prefer-default-export": "warn",
+		"no-case-declarations": "off",
+		"react/no-array-index-key": "off",
+		"no-nested-ternary": "off",
+		"react/no-unescaped-entities": "off",
+		"jsx-a11y/no-static-element-interactions": "off",
+		"jsx-a11y/click-events-have-key-events": "off",
+		"no-else-return": "warn",
+		"react/jsx-no-bind": "warn"
+	}
+}

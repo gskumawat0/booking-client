@@ -1,0 +1,8 @@
+.header {
+	background: #000 url('/images/taxi.jpg') no-repeat left center;
+	background-size: cover;
+	height: calc(100vh - 7rem);
+	/* display: flex;
+	justify-content: center;
+	align-items: center; */
+}
