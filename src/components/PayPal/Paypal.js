@@ -5,7 +5,7 @@ import scriptLoader from 'react-async-script-loader';
 
 const { NODE_ENV, REACT_APP_SANDBOX_APP_ID, REACT_APP_PAYPAL_APP_ID } = process.env;
 
-const Paypal = props => {
+const Paypal = (props) => {
 	window.React = React;
 	window.ReactDOM = ReactDOM;
 
@@ -27,11 +27,11 @@ const Paypal = props => {
 	const paypal = window.PAYPAL;
 	const { total, style, onSuccess, onError, onCancel } = props;
 
-	let env = NODE_ENV === 'production' ? 'live' : 'sandbox';
+	let env = NODE_ENV === 'production' ? 'production' : 'sandbox';
 	let currency = 'USD';
 	const client = {
 		sandbox: REACT_APP_SANDBOX_APP_ID,
-		live: REACT_APP_PAYPAL_APP_ID
+		production: REACT_APP_PAYPAL_APP_ID,
 	};
 	const payment = () =>
 		paypal.rest.payment.create(env, client, {
@@ -39,10 +39,10 @@ const Paypal = props => {
 				{
 					amount: {
 						total,
-						currency
-					}
-				}
-			]
+						currency,
+					},
+				},
+			],
 		});
 
 	const onAuthorize = (data, actions) =>
@@ -53,7 +53,7 @@ const Paypal = props => {
 				payerID: data.payerID,
 				paymentID: data.paymentID,
 				paymentToken: data.paymentToken,
-				returnUrl: data.returnUrl
+				returnUrl: data.returnUrl,
 			};
 
 			onSuccess(payment);
@@ -77,14 +77,14 @@ Paypal.defaultProps = {
 		shape: 'rect',
 		size: 'medium',
 		label: 'pay',
-		tagline: false
+		tagline: false,
 	},
 	total: 100,
 	onSuccess: () => '',
 	onCancel: () => '',
 	onError: () => '',
 	isScriptLoadSucceed: false,
-	isScriptLoaded: false
+	isScriptLoaded: false,
 };
 
 Paypal.propTypes = {
@@ -92,14 +92,14 @@ Paypal.propTypes = {
 		shape: PropTypes.string,
 		size: PropTypes.string,
 		label: PropTypes.string,
-		tagline: PropTypes.bool
+		tagline: PropTypes.bool,
 	},
 	total: PropTypes.number,
 	onSuccess: PropTypes.func,
 	onCancel: PropTypes.func,
 	onError: PropTypes.func,
 	isScriptLoadSucceed: PropTypes.bool,
-	isScriptLoaded: PropTypes.bool
+	isScriptLoaded: PropTypes.bool,
 };
 
 export default scriptLoader('https://www.paypalobjects.com/api/checkout.js')(Paypal);
