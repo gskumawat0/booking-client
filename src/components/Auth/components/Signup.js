@@ -5,6 +5,7 @@ import { Form, Button, Row, Col } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import { authUser } from '../../../store/actions/user';
 import { Spinner, SuccessDisplay, ErrorDisplay } from '../../Layout';
+import GoogleSignIn from './GoogleSignIn';
 
 const Signup = props => {
 	const defaultValues = {
@@ -102,6 +103,8 @@ const Signup = props => {
 						<Button type="submit" className="px-5 ">
 							Sign up
 						</Button>
+						<p className="text-center">OR</p>
+						<GoogleSignIn />
 					</div>
 				</Form>
 				<p className="mb-0">

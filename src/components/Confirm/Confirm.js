@@ -18,7 +18,7 @@ const Confirm = props => {
 		time: new Date().toString()
 	};
 	const [values, setValues] = useState({ ...defaultValues });
-	const [totalAmount, setTotal] = useState(5000);
+	const [totalAmount, setTotal] = useState(10);
 	const [loading, setLoading] = useState(false);
 
 	const { driver, stations, user, error, success } = useSelector(({ booking, drivers, user, error, success }) => ({
